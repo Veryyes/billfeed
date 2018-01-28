@@ -18,6 +18,7 @@
         <card :card.sync="Card2"/>
       </div>
     </div>
+    <findreps></findreps>
     <bottombar/>
   </div>
 </template>
