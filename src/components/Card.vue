@@ -54,6 +54,18 @@ export default {
     },
 
     getBillInfo: function () {
+      /*let zip = 22003
+      fetch('http://localhost:3000/'+ zip).then(
+        function (response) {
+            console.log(response)
+            return response.json()
+        }).then(function (response) {
+            console.log(response)
+            response.forEach(function(item){
+                console.log(item)
+            });
+        })*/
+      
       var propub = 'https://api.propublica.org/congress/v1/115/bills/' + this.card.bill_id
       fetch(propub, { headers: {
         'X-API-Key': 'kTURrPH8Awsjo6H8zd7JSEqfyFrxvPO0ubGmbHl6'
