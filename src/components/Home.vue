@@ -74,7 +74,7 @@ h1{
 
 .findreps{
   position: relative;
-  left: 450px;
-  bottom: 50px;
+  right: 470px;
+  bottom: 320px;
 }
 </style>
