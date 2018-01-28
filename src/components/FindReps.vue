@@ -28,18 +28,21 @@ export default {
   },
   methods: {
     getConstituents: function (zip) {
-      fetch(`https://whoismyrepresentative.com/getall_mems.php?zip=${zip}&output=json`).then(
+      var list = []
+      fetch('http://localhost:3000/' + zip).then(
         function (response) {
-          console.log(response)
           return response.json()
         }).then(function (response) {
-        console.log(response.results)
-        response.results.forEach(function (item) {
-          this.repsList.push(item)
+        console.log(response)
+        response.forEach(function (item) {
+          console.log(item)
+          list.push(item)
+          // console.log(item)
         }).catch(err => console.log(err))
       })
+      this.repsList = list
     },
-    changed (selected) {
+    changed: function (selected) {
       console.log(selected)
     }
   }
@@ -95,4 +98,7 @@ export default {
 </script>
 
 <style scoped>
+.findreps{
+
+}
 </style>

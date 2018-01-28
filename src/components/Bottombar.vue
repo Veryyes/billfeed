@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import 'font-awesome/css/font-awesome.css'
 export default {
   name: 'bottombar'
 }
@@ -17,7 +16,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .spacer{
-  height:2em;
+  height:4em;
+
 }
 .content{
   position:fixed;
@@ -25,5 +25,6 @@ export default {
   left:0;
   width:100%;
   padding:1em;
+    background-color:white;
 }
 </style>

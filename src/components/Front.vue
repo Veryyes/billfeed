@@ -15,7 +15,7 @@
           <li><img class="disabled" src='../assets/as.png'></li>
         </ul>
       </div>
-
+      <findreps></findreps>
     <bottombar/>
   </div>
 </template>
