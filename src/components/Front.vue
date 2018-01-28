@@ -9,10 +9,10 @@
       <hr>
       <div class="content">
         <ul>
-          <a href="http://localhost:8080/org_page"><li><img class="enabled" src='../assets/AI.jpg'></li></a>
-          <li><img src='../assets/aclu.jpeg'></li>
-          <li><img src='../assets/acs.png'></li>
-          <li><img src='../assets/as.png'></li>
+          <a href="/org_page"><li><img src='../assets/AI.jpg'></li></a>
+          <li><img class="disabled" src='../assets/aclu.jpeg'></li>
+          <li><img class="disabled" src='../assets/acs.png'></li>
+          <li><img class="disabled" src='../assets/as.png'></li>
         </ul>
       </div>
 
@@ -34,6 +34,10 @@ export default{
 <style scoped>
 h1{
   font-size: 2em;
+}
+
+.disabled {
+  filter:grayscale(100%);
 }
 
 li{

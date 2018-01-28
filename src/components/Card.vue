@@ -46,7 +46,6 @@ export default {
     handleClick: function (event) {
       console.log(event.target)
       event.target.previousElementSibling.style.display = 'block'
-      
     },
 
     getBillInfo: function () {

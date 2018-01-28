@@ -6,6 +6,7 @@ import Front from '@/components/Front'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/org_page',
