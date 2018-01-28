@@ -3,6 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import FindReps from './components/FindReps.vue'
+import Dropdown from 'hsy-vue-dropdown'
+
+Vue.component('findreps', FindReps)
+Vue.config.productionTip = false
+Vue.use(Dropdown)
 
 Vue.config.productionTip = false
 

@@ -18,6 +18,7 @@
         <card :card.sync="Card2"/>
       </div>
     </div>
+    <findreps></findreps>
     <bottombar/>
   </div>
 </template>
@@ -69,5 +70,10 @@ img{
 
 h1{
   font-size:2.5em;
+}
+
+.findreps{
+  position: relative;
+  left: 450px;
 }
 </style>
