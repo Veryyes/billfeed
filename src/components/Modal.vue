@@ -2,7 +2,13 @@
   <div class="modal">
     <div class="modal-content">
       <span class="close" v-on:click="handleClose">&times;</span>
-      {{title}}
+      {{title}} | {{dateIntroduced}}
+      <p>
+        {{category}}
+      </p>
+      {{houseOrSenate}}
+      <hr>
+      <h4>Bill Summary</h4>
       <p>
         {{text}}
       </p>
@@ -15,7 +21,10 @@ export default {
   name: 'Modal',
   props: {
     title: String,
-    text: String
+    text: String,
+    category: String,
+    dateIntroduced: String,
+    houseOrSenate: String
   },
   data () {
     return {

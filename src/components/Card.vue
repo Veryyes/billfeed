@@ -2,10 +2,13 @@
   <div class="card">
     <modal :title.sync="card.title"
            :text.sync="card.text"
+           :category.sync="card.category"
+           :dateIntroduced.sync="card.dateIntroduced"
+           :houseOrSenate.sync="card.houseOrSenate"
            />
     <button v-on:click="handleClick">
       <div class="content">
-        <h2> {{card.title}} </h2>
+        <h2>{{card.bill}} | {{card.title}}</h2>
         <hr>
         <p> {{card.intro}} </p>
       </div>
@@ -30,7 +33,9 @@ export default {
       text: String,
       category: String,
       dateIntroduced: String,
-      houseOrSenate: String
+      houseOrSenate: String,
+      bill_id: String,
+      bill: String
     }
   },
   data: function () {
@@ -49,7 +54,7 @@ export default {
     },
 
     getBillInfo: function () {
-      var propub = 'https://api.propublica.org/congress/v1/115/bills/hr4881'
+      var propub = 'https://api.propublica.org/congress/v1/115/bills/' + this.card.bill_id
       fetch(propub, { headers: {
         'X-API-Key': 'kTURrPH8Awsjo6H8zd7JSEqfyFrxvPO0ubGmbHl6'
       }})
@@ -58,10 +63,11 @@ export default {
           var results = json.results[0]
           this.card.title = results.short_title
           this.card.intro = results.title
-          this.card.text = results.summary
+          this.card.text = results.summary.length === 0 ? 'No Summary Avaliable' : results.summary
           this.card.category = results.primary_subject
-          this.card.houseOrSenate = results.bill_type
+          this.card.houseOrSenate = results.bill_type === 'hr' ? 'House Bill' : 'Senate Bill'
           this.card.dateIntroduced = results.introduced_date
+          this.card.bill = results.bill
         })
     }
   }

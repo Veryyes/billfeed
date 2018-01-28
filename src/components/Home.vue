@@ -35,11 +35,14 @@ export default {
     return {
       Card1: {
         title: 'Amazing Bill',
-        intro: 'Introduction To this bill'
+        intro: 'Introduction To this bill',
+        bill_id: 'hr21'
+
       },
       Card2: {
         title: 'Not a cool bill',
-        intro: 'text here lol'
+        intro: 'text here lol',
+        bill_id: 'hr1865'
       }
     }
   }
